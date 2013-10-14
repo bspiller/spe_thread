@@ -1,7 +1,8 @@
+#include<string.h>
 #include<stdlib.h>
 #include<pthread.h>
 #include<libspe2.h>
-#include"libcell.h"
+#include"spe_thread.h"
 
 // Structure to hold arguments passed to the holding thread
 struct spe_thread_params {
@@ -74,7 +75,8 @@ end:
 }
 
 
-int spe_thread_destroy( spe_thread_t *thread )
+void spe_thread_destroy( spe_thread_t *thread )
 {
     free( *thread );
+    *thread = NULL;
 }
