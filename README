@@ -1,0 +1,4 @@
+Small wrapper around the libspe2 function spe_context_run(). Since
+spe_context_run() blocks until the SPE program has finished running, we almost
+always need to create a new thread so the main thread isn't blocked. This code
+creates a new thread and runs the SPE program in one function call.
